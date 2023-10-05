@@ -44,7 +44,7 @@
 			<description>
 			</description>
 		</method>
-		<method name="is_nonet_controller" qualifiers="const">
+		<method name="is_no_net_controller" qualifiers="const">
 			<return type="bool" />
 			<description>
 			</description>

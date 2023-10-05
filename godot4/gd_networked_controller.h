@@ -119,7 +119,7 @@ public:
 	bool is_server_controller() const;
 	bool is_player_controller() const;
 	bool is_doll_controller() const;
-	bool is_nonet_controller() const;
+	bool is_no_net_controller() const;
 
 public: // ----------------------------------------------------------- Interface
 	virtual void collect_inputs(double p_delta, DataBuffer &r_buffer) override;

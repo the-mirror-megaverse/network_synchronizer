@@ -99,7 +99,7 @@ void NetworkedControllerBase::set_server_controlled(bool p_server_controlled) {
 		} else if (is_player_controller() || is_doll_controller()) {
 			SceneSynchronizerDebugger::singleton()->debug_warning(network_interface, "You should never call the function `set_server_controlled` on the client, this has an effect only if called on the server.");
 
-		} else if (is_nonet_controller()) {
+		} else if (is_no_net_controller()) {
 			// There is no networking, the same instance is both the client and the
 			// server already, nothing to do.
 			server_controlled = p_server_controlled;
@@ -227,13 +227,13 @@ const DollController *NetworkedControllerBase::get_doll_controller() const {
 	return static_cast<const DollController *>(controller);
 }
 
-NoNetController *NetworkedControllerBase::get_nonet_controller() {
-	ERR_FAIL_COND_V_MSG(is_nonet_controller() == false, nullptr, "This controller is not a no net controller.");
+NoNetController *NetworkedControllerBase::get_no_net_controller() {
+	ERR_FAIL_COND_V_MSG(is_no_net_controller() == false, nullptr, "This controller is not a no net controller.");
 	return static_cast<NoNetController *>(controller);
 }
 
-const NoNetController *NetworkedControllerBase::get_nonet_controller() const {
-	ERR_FAIL_COND_V_MSG(is_nonet_controller() == false, nullptr, "This controller is not a no net controller.");
+const NoNetController *NetworkedControllerBase::get_no_net_controller() const {
+	ERR_FAIL_COND_V_MSG(is_no_net_controller() == false, nullptr, "This controller is not a no net controller.");
 	return static_cast<const NoNetController *>(controller);
 }
 
@@ -253,8 +253,8 @@ bool NetworkedControllerBase::is_doll_controller() const {
 	return controller_type == CONTROLLER_TYPE_DOLL;
 }
 
-bool NetworkedControllerBase::is_nonet_controller() const {
-	return controller_type == CONTROLLER_TYPE_NONETWORK;
+bool NetworkedControllerBase::is_no_net_controller() const {
+	return controller_type == CONTROLLER_TYPE_NO_NETWORK;
 }
 
 void NetworkedControllerBase::set_inputs_buffer(const BitArray &p_new_buffer, uint32_t p_metadata_size_in_bit, uint32_t p_size_in_bit) {

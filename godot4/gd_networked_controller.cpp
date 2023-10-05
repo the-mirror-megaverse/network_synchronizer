@@ -77,7 +77,7 @@ void GdNetworkedController::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("is_server_controller"), &GdNetworkedController::is_server_controller);
 	ClassDB::bind_method(D_METHOD("is_player_controller"), &GdNetworkedController::is_player_controller);
 	ClassDB::bind_method(D_METHOD("is_doll_controller"), &GdNetworkedController::is_doll_controller);
-	ClassDB::bind_method(D_METHOD("is_nonet_controller"), &GdNetworkedController::is_nonet_controller);
+	ClassDB::bind_method(D_METHOD("is_no_net_controller"), &GdNetworkedController::is_no_net_controller);
 
 	ClassDB::bind_method(D_METHOD("_rpc_net_sync_reliable"), &GdNetworkedController::_rpc_net_sync_reliable);
 	ClassDB::bind_method(D_METHOD("_rpc_net_sync_unreliable"), &GdNetworkedController::_rpc_net_sync_unreliable);
@@ -301,8 +301,8 @@ bool GdNetworkedController::is_doll_controller() const {
 	return networked_controller.is_doll_controller();
 }
 
-bool GdNetworkedController::is_nonet_controller() const {
-	return networked_controller.is_nonet_controller();
+bool GdNetworkedController::is_no_net_controller() const {
+	return networked_controller.is_no_net_controller();
 }
 
 void GdNetworkedController::collect_inputs(double p_delta, DataBuffer &r_buffer) {

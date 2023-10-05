@@ -1559,7 +1559,7 @@ void SceneSynchronizerBase::reset_controller(NS::ObjectData *p_controller_nd) {
 	}
 
 	if (!network_interface->is_local_peer_networked()) {
-		controller->controller_type = NetworkedControllerBase::CONTROLLER_TYPE_NONETWORK;
+		controller->controller_type = NetworkedControllerBase::CONTROLLER_TYPE_NO_NETWORK;
 		controller->controller = memnew(NoNetController(controller));
 	} else if (network_interface->is_local_peer_server()) {
 		if (controller->get_server_controlled()) {

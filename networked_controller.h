@@ -55,7 +55,7 @@ class NetworkedControllerBase {
 public:
 	enum ControllerType {
 		CONTROLLER_TYPE_NULL,
-		CONTROLLER_TYPE_NONETWORK,
+		CONTROLLER_TYPE_NO_NETWORK,
 		CONTROLLER_TYPE_PLAYER,
 		CONTROLLER_TYPE_AUTONOMOUS_SERVER,
 		CONTROLLER_TYPE_SERVER,
@@ -234,14 +234,14 @@ public: // -------------------------------------------------------------- Events
 	DollController *get_doll_controller();
 	const DollController *get_doll_controller() const;
 	/// Returns the no net controller or nullptr if this is not a no net.
-	NoNetController *get_nonet_controller();
-	const NoNetController *get_nonet_controller() const;
+	NoNetController *get_no_net_controller();
+	const NoNetController *get_no_net_controller() const;
 
 	bool is_networking_initialized() const;
 	bool is_server_controller() const;
 	bool is_player_controller() const;
 	bool is_doll_controller() const;
-	bool is_nonet_controller() const;
+	bool is_no_net_controller() const;
 
 public:
 	void set_inputs_buffer(const BitArray &p_new_buffer, uint32_t p_metadata_size_in_bit, uint32_t p_size_in_bit);
