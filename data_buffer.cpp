@@ -304,7 +304,7 @@ void DataBuffer::read(std::string &r_out) {
 	std::vector<char> chars;
 	chars.resize(size);
 	read_bits(reinterpret_cast<uint8_t *>(chars.data()), size * 8);
-	r_out = std::string(&chars[0]);
+	r_out = std::string(chars.data(), size);
 }
 
 void DataBuffer::add(const DataBuffer &p_db) {
