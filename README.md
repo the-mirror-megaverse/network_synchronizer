@@ -1,3 +1,7 @@
+**Note: Archived because [The Mirror](https://github.com/the-mirror-gdp/the-mirror) is using the upstream https://github.com/GameNetworking/network_synchronizer.**
+
+---
+
 # Network Synchronizer
 Godot 3.x and 4.0 module to create realtime multiplayer games. It uses Prediction & Rewinding networking model.
 
